@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    --icon-color: blueviolet;
+    --icon-color: #bbc2d3;
   }
 
 html, body {
@@ -15,6 +15,7 @@ body {
     grid-template-areas: "sidebar header"
                         "sidebar main-container";
     grid-template-rows: 100px auto;
+    grid-template-columns: 281px 1fr;
     min-height: 100vh;
 }
 
@@ -72,7 +73,6 @@ a:visited {
     width: 50px;
     height: 50px;
     border-radius: 25px;
-    --icon-color: blueviolet;
     background-color: var(--icon-color);
     display: flex;
     justify-content: center;
@@ -245,4 +245,12 @@ h3 {
 
 .releases .card a:hover {
     font-weight: 700;
+}
+
+.privacy-policy h4 {
+    padding: 25px 0;
+}
+
+.contact-data p {
+    line-height: 4ch;
 }
