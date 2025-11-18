@@ -110,5 +110,12 @@
             </div>
         </div>
     </div>
+
+    <script>
+        const userName = document.querySelector(".name");
+        userName.textContent = prompt("What's your name?", "");
+        const date = document.querySelector(".date");
+        date.textContent = new Date().toLocaleDateString("de-DE");
+    </script>
 </body>
 </html>
