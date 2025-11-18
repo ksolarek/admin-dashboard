@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --icon-color: blueviolet;
   }
 
 html, body {
@@ -28,9 +29,10 @@ a:visited {
 
 .sidebar {
     grid-area: sidebar;
+    height: 100vh;
     padding: 35px 45px 35px 35px;
     display: grid;
-    grid-template-rows: 50px 1fr 80px;
+    grid-template-rows: 50px auto 1fr 80px;
     gap: 40px;
     background-color: #fdfdfd;
 }
@@ -58,6 +60,14 @@ a:visited {
     justify-self: center;
 }
 
+.sidebar a {
+    transition: all .1s ease-in;
+}
+
+.sidebar a:hover {
+    font-weight: 700;
+}
+
 .dashboard-icon {
     width: 50px;
     height: 50px;
@@ -67,6 +77,10 @@ a:visited {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.bottom-menu {
+    grid-row: 4 / 5;
 }
 
 h2 {
@@ -92,7 +106,6 @@ h3 {
     width: 50px;
     height: 50px;
     border-radius: 25px;
-    --icon-color: blueviolet;
     background-color: var(--icon-color);
     display: flex;
     justify-content: center;
@@ -129,20 +142,103 @@ h3 {
     grid-template-areas: "news ads"
                         "news releases";
     padding: 35px;
+    grid-template-rows: auto 1fr;
+    gap: 35px;
     background-color: #f4f4f4;
     -webkit-box-shadow: inset 19px 0px 11px -22px rgba(0,0,0,0.19); 
     box-shadow: inset 19px 0px 11px -22px rgba(0,0,0,0.19);
 }
 
+.news {
+    grid-area: news;
+}
+
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: #fdfdfd;
+    border-radius: 25px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    position: relative;
+    top: 0;
+    transition: all .1s ease-in;
+}
+
+.cards .card:hover {
+    top: -2px;
+}
+
+.card .thumb {
+    padding-bottom: 60%;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 25px 25px 0 0;
+    margin-bottom: 25px;
+  }
+
+.cards .card h4 {
+    padding: 0 25px 0 25px;
+}
+
+.cards .card p {
+    padding: 15px 25px 25px 25px;
 }
 
 .ads {
     grid-area: ads;
 }
 
+.ads .card {
+    background-size: cover;
+    background-position: center center;
+    border-radius: 25px;
+    padding: 25px;
+    min-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.ads .card h4 {
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+}
+
+.ads .card p {
+    font-weight: 300;
+    font-size: 20px;
+    font-style: italic;
+    color: white;
+}
+
+.ads .card:hover {
+    top: -2px;
+}
+
 .releases {
     grid-area: releases;
+}
+
+.releases .card {
+    padding: 0 25px;
+}
+
+.releases .card a {
+    display: block;
+    padding: 25px 0;
+    border-bottom: 1px solid #c7c7c7;
+    transition: all .1s ease-in;
+}
+
+.releases .card a:last-of-type {
+    border: none;
+}
+
+.releases .card a:hover {
+    font-weight: 700;
 }
