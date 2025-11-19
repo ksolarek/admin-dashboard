@@ -112,8 +112,19 @@
     </div>
 
     <script>
-        const userName = document.querySelector(".name");
-        userName.textContent = prompt("What's your name?", "");
+        const userNameEl = document.querySelector(".name");
+        function setName() {
+            const userName = prompt("What's your name?");
+            localStorage.setItem("name", userName);
+            userNameEl.textContent = userName;
+        }
+        if (!localStorage.getItem("name")) {
+                setName();
+            } else {
+                const declaredName = localStorage.getItem("name");
+                userNameEl.textContent = declaredName;
+        }
+        userNameEl.addEventListener("click", setName);
         const date = document.querySelector(".date");
         date.textContent = new Date().toLocaleDateString("de-DE");
     </script>
