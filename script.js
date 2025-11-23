@@ -20,3 +20,29 @@ const titleInput = document.querySelector("#title");
 const artistInput = document.querySelector("#artist");
 const formatInput = document.querySelector("#format");
 const conditionInput = document.querySelector("#condition");
+
+const dialog = document.querySelector("dialog");
+const openButton = document.querySelector(".open-dialog");
+const closeButton = document.querySelector(".close-dialog");
+
+const formButton = document.querySelector(".form-button");
+formButton.addEventListener("click", function(event) {
+    if (titleInput.value, artistInput.value, formatInput.value, conditionInput.value) {
+        addAlbumToCollection(titleInput.value, artistInput.value, formatInput.value, conditionInput.value);
+        displayCollection(collection); // function needs to be added
+        event.preventDefault();
+        dialog.close();
+    };
+});
+
+openButton.addEventListener("click", () => {
+    dialog.showModal();
+    titleInput.value = "";
+    artistInput.value = "";
+    formatInput.value = "";
+    conditionInput.value = "";
+});
+
+closeButton.addEventListener("click", () => {
+    dialog.close();
+});
