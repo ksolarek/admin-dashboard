@@ -280,7 +280,7 @@ h3 {
 .my-collection {
     grid-row: 2 / 3;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(30vw, 1fr));
     grid-template-rows: min-content;
     grid-auto-rows: min-content;
     gap: 20px;
@@ -411,4 +411,12 @@ select {
 .closing-row {
     display: flex;
     justify-content: flex-end;
+}
+
+.remove {
+    width: 20px;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    cursor: pointer;
 }

@@ -48,30 +48,48 @@ closeButton.addEventListener("click", () => {
     dialog.close();
 });
 
-const myCollection = document.querySelector(".my-collection");
+
 
 function displayCollection(arr) {
     const item = arr[arr.length - 1];
-        const cardDiv = document.createElement("div");
-        cardDiv.classList.add("card");
+    const cardDiv = document.createElement("div");
+    cardDiv.classList.add("card");
 
-        const paraTitle = document.createElement("p");
-        paraTitle.textContent = `Title: "${item.title}"`;
-        cardDiv.appendChild(paraTitle);
+    const paraTitle = document.createElement("p");
+    paraTitle.textContent = `Title: "${item.title}"`;
+    cardDiv.appendChild(paraTitle);
 
-        const paraArtist = document.createElement("p");
-        paraArtist.textContent = `Artist: ${item.artist}`;
-        cardDiv.appendChild(paraArtist);
+    const paraArtist = document.createElement("p");
+    paraArtist.textContent = `Artist: ${item.artist}`;
+    cardDiv.appendChild(paraArtist);
 
-        const paraFormat = document.createElement("p");
-        paraFormat.textContent = `Format: ${item.format}`;
-        cardDiv.appendChild(paraFormat);
+    const paraFormat = document.createElement("p");
+    paraFormat.textContent = `Format: ${item.format}`;
+    cardDiv.appendChild(paraFormat);
 
-        const paraCondition = document.createElement("p");
-        paraCondition.textContent = `Condition: ${item.condition}`;
-        cardDiv.appendChild(paraCondition);
+    const paraCondition = document.createElement("p");
+    paraCondition.textContent = `Condition: ${item.condition}`;
+    cardDiv.appendChild(paraCondition);
 
-        cardDiv.classList.add("card");
-        myCollection.appendChild(cardDiv);
-    
+    const myCollection = document.querySelector(".my-collection");
+    const removeButton = document.createElement("img");
+    removeButton.setAttribute("src", "close-circle-outline.svg");
+    removeButton.classList.add("remove");
+    removeButton.setAttribute("data-album-id", item.albumId);
+    removeButton.addEventListener("click", function(e) {
+        const removeButtonId = e.target.getAttribute("data-album-id");
+        const cardToRemove = document.querySelector(`[data-album-id="${removeButtonId}"]`);
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i].albumId === removeButtonId) {
+                arr.splice(i, 1);
+                break;
+            }
+        }
+        myCollection.removeChild(cardToRemove);
+    });
+    cardDiv.appendChild(removeButton);
+  
+    cardDiv.classList.add("card");
+    cardDiv.setAttribute("data-album-id", item.albumId);
+    myCollection.appendChild(cardDiv);
 }
