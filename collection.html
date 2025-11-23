@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+
+    <title>Dashboard- My collection</title>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <div class="dashboard-icon">
+                <img src="view-dashboard-outline.svg" alt="Dashboard icon" width="30px">
+            </div>
+            <h2>Dashboard</h2>
+        </div>
+        <ul class="top-menu">
+            <a href="index.html"><li><img src="home-variant-outline.svg" width="30px">Home</li></a>
+            <a href="collection.html"><li><img src="album.svg" width="30px">My collection</li></a>
+            <a href="https://www.reddit.com/r/experimentalmusic/"><li><img src="account-group-outline.svg" width="30px">Communities</li></a>
+            <a href="https://pitchfork.com/reviews/albums/"><li><img src="pencil-outline.svg" width="30px">Reviews</li></a>
+            <a href="https://www.bandsintown.com/c/zurich-switzerland"><li><img src="calendar-week-outline.svg" width="30px">Upcoming events</li></a>
+        </ul>
+        <ul class="bottom-menu">
+            <a href="privacy.html"><li><img src="security.svg" width="30px">Privacy policy</li></a>
+            <a href="contact.html"><li><img src="email-outline.svg" width="30px">Contact</li></a>
+        </ul>
+    </div>
+    <div class="header">
+        <h3>My collection</h3>
+    </div>
+    <div class="main-container">
+        
+        <dialog class="form-dialog">
+            <button class="close-dialog">X</button>
+            <form action="" method="get" class="sign-up">
+
+                      <div class="form-row">
+                          <div class="form-title">
+                              <label for="title">Title *</label>
+                              <input type="text" name="title" id="title" autofocus required>
+                          </div>
+                          <div class="form-artist">
+                              <label for="artist">Artist *</label>
+                              <input type="text" name="artist" id="artist" required>
+                          </div>
+                      </div>
+            
+                      <div class="form-artist">
+                        <label for="format">Format *</label>
+                        <select name="format" id="format" required>
+                          <option value="">Please choose an option</option>
+                          <option value="Vinyl">Vinyl</option>
+                          <option value="CD">CD</option>
+                          <option value="Cassette">Cassette</option>
+                          <option value="Digital">Digital</option>
+                          <option value="DVD">DVD</option>
+                          <option value="VHS">VHS</option>
+                          <option value="Blu-ray">Blu-ray</option>
+                        </select>
+                      </div>
+                          
+                       <div class="form-condition">
+                        <label for="condition">Condition *</label>
+                        <select name="condition" id="condition" required>
+                          <option value="">Please choose an option</option>
+                          <option value="Mint">Mint</option>
+                          <option value="Near Mint">Near Mint</option>
+                          <option value="Very Good +">Very Good +</option>
+                          <option value="Very Good">Very Good</option>
+                          <option value="Good">Good</option>
+                          <option value="Poor">Poor</option>
+                          <option value="None">None (digital file)</option>
+                        </select>
+                      </div>
+              
+                      <button type="submit" class="form-button">Add</button>
+          
+                  </form>
+          </dialog>
+          
+          <button class="open-dialog">Add album to collection</button>
+
+    </div>
+</body>
+</html>
