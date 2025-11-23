@@ -28,9 +28,9 @@ const closeButton = document.querySelector(".close-dialog");
 const formButton = document.querySelector(".form-button");
 
 formButton.addEventListener("click", function(event) {
-    if (titleInput.value, artistInput.value, formatInput.value, conditionInput.value) {
+    if (titleInput.value && artistInput.value && formatInput.value && conditionInput.value) {
         addAlbumToCollection(titleInput.value, artistInput.value, formatInput.value, conditionInput.value);
-        displayCollection(collection); // function needs to be added
+        displayCollection(collection); 
         event.preventDefault();
         dialog.close();
     };
@@ -51,21 +51,27 @@ closeButton.addEventListener("click", () => {
 const myCollection = document.querySelector(".my-collection");
 
 function displayCollection(arr) {
-    for (const item of arr) {
+    const item = arr[arr.length - 1];
         const cardDiv = document.createElement("div");
         cardDiv.classList.add("card");
+
         const paraTitle = document.createElement("p");
         paraTitle.textContent = `Title: "${item.title}"`;
         cardDiv.appendChild(paraTitle);
+
         const paraArtist = document.createElement("p");
         paraArtist.textContent = `Artist: ${item.artist}`;
         cardDiv.appendChild(paraArtist);
+
         const paraFormat = document.createElement("p");
         paraFormat.textContent = `Format: ${item.format}`;
         cardDiv.appendChild(paraFormat);
+
         const paraCondition = document.createElement("p");
         paraCondition.textContent = `Condition: ${item.condition}`;
         cardDiv.appendChild(paraCondition);
+
+        cardDiv.classList.add("card");
         myCollection.appendChild(cardDiv);
-    }
+    
 }
